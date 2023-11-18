@@ -26,11 +26,7 @@ public class Movement : MonoBehaviour
         {
             moveDir2D.x = -1;
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Interact!!");
-        }
-
+        
         moveDir2D = moveDir2D.normalized;
         Vector3 moveDir = new Vector3(moveDir2D.x,0, moveDir2D.y); 
 

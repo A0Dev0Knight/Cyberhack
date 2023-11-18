@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class InteractLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float InteractDistance = 2f;
+    [SerializeField] LayerMask ColliderFilter;
+    
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Collider2D collider2D = Physics2D.OverlapCircle(transform.position, InteractDistance, ColliderFilter);
+            if (collider2D != null) { Debug.Log("Next Scene!"); }
+        }
     }
 }
